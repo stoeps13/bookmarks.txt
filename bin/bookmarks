@@ -23,8 +23,13 @@ if [ -n "$url" ]
 then
 	echo "$url $title" >> bookmarks.txt
 else
-	global="$HOME/bookmarks.txt"
-	local="$PWD/bookmarks.txt"
+        if [[ "$HOME" == "$PWD" ]]
+        then
+	        global="$HOME/bookmarks.txt"
+        else
+	        global="$HOME/bookmarks.txt"
+	        local="$PWD/bookmarks.txt"
+        fi
 
 	cat "$global" "$local" 2>/dev/null || true
 fi
