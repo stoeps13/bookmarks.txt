@@ -21,17 +21,15 @@ title=${2:-}
 
 if [ -n "$url" ]
 then
-	echo "$url $title" >> bookmarks.txt
+  echo "$url $title" >> bookmarks.txt
 else
-        if [[ "$HOME" == "$PWD" ]]
-        then
-	        global="$HOME/bookmarks.txt"
-	        
-                cat "$global" 2>/dev/null || true
-        else
-	        global="$HOME/bookmarks.txt"
-	        local="$PWD/bookmarks.txt"
-	        
-                cat "$global" "$local" 2>/dev/null || true
-        fi
+  if [[ "$HOME" == "$PWD" ]]
+  then
+    global="$HOME/bookmarks.txt"
+    cat "$global" 2>/dev/null || true
+  else
+    global="$HOME/bookmarks.txt"
+    local="$PWD/bookmarks.txt"
+    cat "$global" "$local" 2>/dev/null || true
+  fi
 fi
