@@ -43,7 +43,7 @@ The plain text nature of bookmark files allows to use any program to manage URLs
 Use [fzf] to select a URL and open it in the default browser:
 
 ```ShellSession
-./bin/bookmarks | fzf | cut -d ' ' -f 1 | xargs open
+./bin/bookmarks | fzf | cut -d ' ' -f 1 | xargs xdg-open
 ```
 
 Add a new URL:
