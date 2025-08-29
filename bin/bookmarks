@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # bookmarks [URL] [title]
 #
@@ -21,7 +21,7 @@ title=${2:-}
 
 if [ -n "$url" ]
 then
-  echo "$url $title" >> bookmarks.txt
+  echo "$url $title" >> "$HOME/bookmarks.txt"
 else
   if [[ "$HOME" == "$PWD" ]]
   then
